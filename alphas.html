@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classe arc-en-ciel</title>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.0.3-alpha/dist/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<img src="banniere.png"  width=100%/>
+<table>
+    <tr>
+        <td> <a href="index.html"> <img src="accueil.jpg" width=100%/></a>  </td>
+        <td> <a href="alphas.html"> <img src="alphas.jpg" width=100%/></a>  </td>
+        <td> <a href="ecriture.html"> <img src="ecriture.jpg" width=100%/></a>  </td>
+        <td> <a href="maths.html"> <img src="maths.jpg" width=100%/></a>  </td>
+        <td> <a href="projet.html"> <img src="projets.jpg" width=100%/> </a> </td>
+    </tr>
+</table>
+<div class="container">
+
+    <!-- Dropdown Trigger -->
+    <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Sélectionnez une vidéo</a>
+    <!-- Dropdown Structure -->
+    <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="#" onclick="loadVideo('https://view.genial.ly/6168408bfe2bd0100437bd3d')">Les alphas voyelles</a></li>
+        <li><a href="#" onclick="loadVideo('https://view.genial.ly/650554ce2d6e6c001199999b')">Les alphas consonnes longues</a></li>
+        <li><a href="#" onclick="loadVideo('https://view.genial.ly/5f32d4f53cbaaa0cf97415a5')">Ecrire avec les alphas 1</a></li>
+        <li><a href="#" onclick="loadVideo('https://view.genial.ly/5f316db0e948420d8267a6bd')">Ecrire avec les alphas 2</a></li>
+        <li><a href="#" onclick="loadVideo('https://view.genial.ly/5f31690ee948420d8267a67d')">Les alphas consonnes courtes</a></li>
+        <li><a href="#" onclick="loadVideo('https://view.genial.ly/5f317d21e948420d8267a731')">Lire avec les alphas</a></li>
+        <li><a href="#" onclick="loadVideo('https://www.youtube.com/embed/PmpycSN9iMs?si=rnLWQ21ykmS0Vn00')">La transformation des alphas</a></li>
+        <li><a href="#" onclick="loadVideo('https://view.genial.ly/5f2ea6f9e948420d82679b3d')">OU / AN / ON</a></li>
+        <li><a href="#" onclick="loadVideo('https://view.genial.ly/5f35619347b3cc0d87bbc144')">IN / EU / OI</a></li>
+    </ul>
+    <!-- Conteneur pour afficher la vidéo sélectionnée -->
+    <div id="videoContainer"></div>
+</div>
+<footer>
+    <table>
+        <tr>
+            <td><a href="mentions.html">Mentions légales</a> </td>
+            <td><a href="conditions.html"> Conditions générales</a></td>
+        </tr>
+    </table>
+</footer>
+
+
+<script>
+    $(document).ready(function(){
+        // Initialiser le dropdown
+        $('.dropdown-trigger').dropdown();
+    });
+
+    // Fonction pour charger la vidéo sélectionnée
+    function loadVideo(videoId) {
+        var iframe = '<iframe width="560" height="315" src= '+ videoId + '   frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+        $('#videoContainer').html(iframe);
+    }
+</script>
+</body>
+</html>
+

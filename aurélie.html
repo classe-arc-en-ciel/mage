@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:http="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Les 4 saisons de l'Apiculteur</title>
+    <script src=” jquery-2.0.3.min.js”></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.2.1/dist/css/materialize.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.2.1/dist/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <style>
+        /* ---- mise en page ---- */
+        body {
+            background-color: #efc049;
+            width: 1920px;
+            height: 1080px;
+        }
+        h1 {
+            padding-top: 20px;
+            padding-bottom:20px;
+            background-color: peru;
+            border-style: solid;
+            box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            color: white ;
+            text-align: center;
+            font-family: "Source Sans Pro";
+            font-size: 50px;
+        }
+        .row
+        {
+            height: fit-content(30%);
+        }
+        #imageDeMoi
+        {
+            border-radius: 50px;
+        }
+
+        #bouton
+        {
+            height: 55px;
+            width: 230px;
+            font-family: "Source Sans Pro";
+            font-size: 20px;
+            font-weight: bold;
+            background-color: peru;
+            color: white;
+            border-radius: 40%;
+            box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .material-symbols-outlined {
+            font-variation-settings:
+                    'FILL' 0,
+                    'wght' 400,
+                    'GRAD' 0,
+                    'opsz' 24
+        }
+
+        .photsCarou
+        {
+            width: 120%;
+            border-radius: 40px;
+        }
+
+        div.textePresentation
+        {
+            display: block;
+            position: relative;
+            text-align: center;
+            top: 100px;
+            padding-top: 200px;
+            padding-left: 20px;
+            margin-right: 20px;
+        }
+
+        h3
+        {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        #bienvenue
+        {
+            display: block;
+            position: relative;
+        }
+
+        #bonneVisite
+        {
+            display: block;
+            position: relative;
+            top: 0;
+        }
+        p
+        {
+            font-size: 20px;
+        }
+
+        #imageRuche
+        {
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        div.image
+        {
+            display: initial;
+            position: relative;
+            top: 200px;
+            left: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 19%;
+        }
+        div.containerImg
+        {
+            display: block;
+            position: absolute;
+            left: 1460px;
+            top: 725px;
+            background-color: white;
+            padding: 10px;
+            width: 15.8%;
+            text-align: center;
+            font-weight:bold;
+            font-family: "Sofia", sans-serif;
+            font-size: 40px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+        .material-symbols-outlined
+        {
+            font-variation-settings:
+                    'FILL' 0,
+                    'wght' 600,
+                    'GRAD' 0,
+                    'opsz' 24;
+            align-content: center;
+        }
+        /* ---- positionnement ---- */
+
+        div.nav-wrapper
+        {
+            display: block;
+            position: absolute;
+            width: 15%;
+            left: 1400px;
+            top: 45px;
+        }
+        .entete
+        {
+            position: relative;
+            top: 0;
+            margin-left: 35px;
+            margin-right: 35px;
+            word-spacing: 13px;
+
+        }
+
+        #imageDeMoi
+        {
+            display: block;
+            position: absolute;
+            top: 320px;
+            left: 150px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        #bouton
+        {
+            display: block;
+            position: relative;
+            top: 720px;
+            left: 185px;
+        }
+        .carousel
+        {
+            display: block;
+            position: relative;
+            right: 285px;
+            top: 165px;
+            transform: scale(1.6);
+        }
+        #basDePage
+        {
+            background-color: peru;
+
+        }
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 90%; /* Full width */
+            height: 100%; /* Full height */
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 0% auto; /* 15% from the top and centered */
+            width: 80%; /* Could be more or less, depending on screen size */
+            height: 100px;
+        }
+        h4
+        {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            padding-left: 50px;
+            font-family: "Sofia";
+            color: black;
+            font-size: 60px;
+        }
+        #modal-content-text
+        {
+            margin: 75px;
+            font-family: "Roboto";
+            color: black;
+            font-size: 27px;
+        }
+        /* The Close Button */
+        .material-symbols-outlined
+        {
+            font-variation-settings:
+                    'FILL' 0,
+                    'wght' 400,
+                    'GRAD' 0,
+                    'opsz' 24
+        }
+
+        #lol
+        {
+            display: block;
+            position: relative;
+            padding-top: 13px;
+        }
+        close {
+            font-size: 35px;
+            font-weight: bold;
+            padding-right: 30px;
+            margin-bottom: 600px;
+        }
+        .close:focus {
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal-close
+        {
+            padding-bottom: 50px;
+            float: right;
+            background-color: peru;
+            color: black;
+        }
+        .footer-copyright
+        {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+
+    <header class ="entete">
+        <nav>
+            <h1> Les 4 saisons <br> de l'Apiculteur</h1>
+            <div class="nav-wrapper">
+                <form>
+                    <div class="input-field">
+                        <input id="search" type="search" required>
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+</head>
+
+<body>
+<div class = divider></div>
+<div class=" section">
+    <div class="row" style="gap: 5px;">
+
+        <div class="col s3">
+            <img id="imageDeMoi" src="moi_api.JPG" height="490" width="300"/>
+            <a id="bouton" class="waves-effect wavelight btn-large" onclick = "window.location.href = 'corps_texte_outils.html'">
+                <i class="material_icons left">
+                    <span class="material-symbols-outlined">handyman</span>
+                    Les outils
+                </i>
+            </a>
+        </div>
+
+        <div class="col s6">
+            <div class="carousel">
+                <a class="carousel-item"  onclick = "window.location;href = 'http://localhost:63342/site_essai_1/corps_texte_page_printemps.html?_ijt=6ktblpfi7ofep9o77nmcu6rdgi&_ij_reload=RELOAD_ON_SAVE'">
+                    <img class = photsCarou src="printemps.jpg" height="300" width="200"/>
+                </a>
+                <a class="carousel-item"  onclick = "window.location;href = 'http://localhost:63342/site_essai_1/corps_texte_page_hiver.html?_ijt=6ktblpfi7ofep9o77nmcu6rdgi&_ij_reload=RELOAD_ON_SAVE'">
+                    <img class = photsCarou src="hiver.jpg" height="300" width="200"/>
+                </a>
+                <a class="carousel-item" onclick = "window.location;href = 'http://localhost:63342/site_essai_1/corps_texte_page_automne.html?_ijt=6ktblpfi7ofep9o77nmcu6rdgi&_ij_reload=RELOAD_ON_SAVE'">
+                    <img class = photsCarou src="automne.jpg" height="300" width="200"/>
+                </a>
+                <a class="carousel-item"  onclick = "window.location;href = 'http://localhost:63342/site_essai_1/coprs_texte_page_ete.html?_ijt=cdr8q210ivfetnk1jcij29hj2a'">
+                    <img class = photsCarou src="ete.JPG" height="300" width="200"/>
+                </a>
+            </div>
+            <div class = textePresentation>
+                <h3 id="bienvenue">
+                    Bienvenue dans ce site qui présente ma pratique de l'Apiculture
+                </h3>
+                <p>
+                    Voici différentes rubriques qui vous présenteront les différentes étapes par lesquelles passent l'apiculteur au cours d'une année!
+                </p>
+                <h3 id="bonneVisite">
+                    Bonne visite !
+                </h3>
+            </div>
+        </div>
+
+        <div class="col s3">
+            <div class="image" onclick = window.location.href='http://localhost:63342/site_essai_1/corps_texte_page_ruche.html?_ijt=4ntvof1748fvlstgl83chhtrmt&_ij_reload=RELOAD_ON_SAVE'>
+                <img id="imageRuche" src="ruche_proche_de_cote.jpg" height="400" width="300" />
+            </div>
+            <div class="containerImg" onclick = window.location.href='http://localhost:63342/site_essai_1/corps_texte_page_ruche.html?_ijt=4ntvof1748fvlstgl83chhtrmt&_ij_reload=RELOAD_ON_SAVE'>
+                <p>La ruche</p>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class = "footer-copyright" >
+    <nav id = basDePage>
+        <div class="nav-wrapper-bottom">
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="http://localhost:63342/site_essai_1/mentions-legales.html?_ijt=p4m77fiu6ua4j4383joe9i9ifh&_ij_reload=RELOAD_ON_SAVE">Mentions légales</a></li>
+                <li><a href="http://localhost:63342/site_essai_1/CGU.html?_ijt=5dubmhhi61noikrff0jm7gdor0&_ij_reload=RELOAD_ON_SAVE">CGU</a></li>
+                <li><span data-target="modal1" class="modal-trigger"><a href="#!">Gestion de cookies</a></span>
+                    <div id="modal1" class="modal modal-fixed-footer">
+                        <div class="modal-content">
+                            <span class="close"><a href="#!" class="modal-close btn"><span id = "lol" class="material-symbols-outlined">close</span></a></span>
+                            <h4>La gestion de cookies</h4>
+                            <p id="modal-content-text">En ce qui concerne les cookies, on ne pourra déterminer leur quantité et leur origines qu'une fois le site mis en ligne.
+                                <br>On pourra alors faire une analyse qui déterminera leur nature et leur quantité pour avertir nos usagers.</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</footer>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function()
+    {
+        var elems = document.querySelectorAll('.carousel');
+        var instance = M.Carousel.init(elems, {});
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems, {
+            preventScrolling: true, dismissible: true,
+        });
+        var instance = M.Modal.getInstance(elem);
+        instance.open();
+    });
+</script>
+</html>
